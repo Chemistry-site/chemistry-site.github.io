@@ -1,0 +1,145 @@
+const elements = {
+  "H": {"atomic_number": 1, "protons": 1, "electrons": 1, "neutrons": 0},
+  "He": {"atomic_number": 2, "protons": 2, "electrons": 2, "neutrons": 2},
+  "Li": {"atomic_number": 3, "protons": 3, "electrons": 3, "neutrons": 4},
+  "Be": {"atomic_number": 4, "protons": 4, "electrons": 4, "neutrons": 5},
+  "B": {"atomic_number": 5, "protons": 5, "electrons": 5, "neutrons": 6},
+  "C": {"atomic_number": 6, "protons": 6, "electrons": 6, "neutrons": 6},
+  "N": {"atomic_number": 7, "protons": 7, "electrons": 7, "neutrons": 7},
+  "O": {"atomic_number": 8, "protons": 8, "electrons": 8, "neutrons": 8},
+  "F": {"atomic_number": 9, "protons": 9, "electrons": 9, "neutrons": 10},
+  "Ne": {"atomic_number": 10, "protons": 10, "electrons": 10, "neutrons": 10},
+  "Na": {"atomic_number": 11, "protons": 11, "electrons": 11, "neutrons": 12},
+  "Mg": {"atomic_number": 12, "protons": 12, "electrons": 12, "neutrons": 12},
+  "Al": {"atomic_number": 13, "protons": 13, "electrons": 13, "neutrons": 14},
+  "Si": {"atomic_number": 14, "protons": 14, "electrons": 14, "neutrons": 14},
+  "P": {"atomic_number": 15, "protons": 15, "electrons": 15, "neutrons": 16},
+  "S": {"atomic_number": 16, "protons": 16, "electrons": 16, "neutrons": 16},
+  "Cl": {"atomic_number": 17, "protons": 17, "electrons": 17, "neutrons": 18},
+  "Ar": {"atomic_number": 18, "protons": 18, "electrons": 18, "neutrons": 22},
+  "K": {"atomic_number": 19, "protons": 19, "electrons": 19, "neutrons": 20},
+  "Ca": {"atomic_number": 20, "protons": 20, "electrons": 20, "neutrons": 20},
+  "Sc": {"atomic_number": 21, "protons": 21, "electrons": 21, "neutrons": 24},
+  "Ti": {"atomic_number": 22, "protons": 22, "electrons": 22, "neutrons": 26},
+  "V": {"atomic_number": 23, "protons": 23, "electrons": 23, "neutrons": 28},
+  "Cr": {"atomic_number": 24, "protons": 24, "electrons": 24, "neutrons": 28},
+  "Mn": {"atomic_number": 25, "protons": 25, "electrons": 25, "neutrons": 30},
+  "Fe": {"atomic_number": 26, "protons": 26, "electrons": 26, "neutrons": 30},
+  "Co": {"atomic_number": 27, "protons": 27, "electrons": 27, "neutrons": 32},
+  "Ni": {"atomic_number": 28, "protons": 28, "electrons": 28, "neutrons": 31},
+  "Cu": {"atomic_number": 29, "protons": 29, "electrons": 29, "neutrons": 35},
+  "Zn": {"atomic_number": 30, "protons": 30, "electrons": 30, "neutrons": 35},
+  "Ga": {"atomic_number": 31, "protons": 31, "electrons": 31, "neutrons": 39},
+  "Ge": {"atomic_number": 32, "protons": 32, "electrons": 32, "neutrons": 41},
+  "As": {"atomic_number": 33, "protons": 33, "electrons": 33, "neutrons": 42},
+  "Se": {"atomic_number": 34, "protons": 34, "electrons": 34, "neutrons": 45},
+  "Br": {"atomic_number": 35, "protons": 35, "electrons": 35, "neutrons": 45},
+  "Kr": {"atomic_number": 36, "protons": 36, "electrons": 36, "neutrons": 48},
+  "Rb": {"atomic_number": 37, "protons": 37, "electrons": 37, "neutrons": 48},
+  "Sr": {"atomic_number": 38, "protons": 38, "electrons": 38, "neutrons": 50},
+  "Y": {"atomic_number": 39, "protons": 39, "electrons": 39, "neutrons": 50},
+  "Zr": {"atomic_number": 40, "protons": 40, "electrons": 40, "neutrons": 51},
+  "Nb": {"atomic_number": 41, "protons": 41, "electrons": 41, "neutrons": 52},
+  "Mo": {"atomic_number": 42, "protons": 42, "electrons": 42, "neutrons": 54},
+  "Tc": {"atomic_number": 43, "protons": 43, "electrons": 43, "neutrons": 55},
+  "Ru": {"atomic_number": 44, "protons": 44, "electrons": 44, "neutrons": 57},
+  "Rh": {"atomic_number": 45, "protons": 45, "electrons": 45, "neutrons": 58},
+  "Pd": {"atomic_number": 46, "protons": 46, "electrons": 46, "neutrons": 60},
+  "Ag": {"atomic_number": 47, "protons": 47, "electrons": 47, "neutrons": 61},
+  "Cd": {"atomic_number": 48, "protons": 48, "electrons": 48, "neutrons": 64},
+  "In": {"atomic_number": 49, "protons": 49, "electrons": 49, "neutrons": 66},
+  "Sn": {"atomic_number": 50, "protons": 50, "electrons": 50, "neutrons": 69},
+  "Sb": {"atomic_number": 51, "protons": 51, "electrons": 51, "neutrons": 71},
+  "Te": {"atomic_number": 52, "protons": 52, "electrons": 52, "neutrons": 76},
+  "I": {"atomic_number": 53, "protons": 53, "electrons": 53, "neutrons": 74},
+  "Xe": {"atomic_number": 54, "protons": 54, "electrons": 54, "neutrons": 77},
+  "Cs": {"atomic_number": 55, "protons": 55, "electrons": 55, "neutrons": 78},
+  "Ba": {"atomic_number": 56, "protons": 56, "electrons": 56, "neutrons": 81},
+  "La": {"atomic_number": 57, "protons": 57, "electrons": 57, "neutrons": 82},
+  "Ce": {"atomic_number": 58, "protons": 58, "electrons": 58, "neutrons": 82},
+  "Pr": {"atomic_number": 59, "protons": 59, "electrons": 59, "neutrons": 82},
+  "Nd": {"atomic_number": 60, "protons": 60, "electrons": 60, "neutrons": 84},
+  "Pm": {"atomic_number": 61, "protons": 61, "electrons": 61, "neutrons": 84},
+  "Sm": {"atomic_number": 62, "protons": 62, "electrons": 62, "neutrons": 88},
+  "Eu": {"atomic_number": 63, "protons": 63, "electrons": 63, "neutrons": 89},
+  "Gd": {"atomic_number": 64, "protons": 64, "electrons": 64, "neutrons": 93},
+  "Tb": {"atomic_number": 65, "protons": 65, "electrons": 65, "neutrons": 94},
+  "Dy": {"atomic_number": 66, "protons": 66, "electrons": 66, "neutrons": 97},
+  "Ho": {"atomic_number": 67, "protons": 67, "electrons": 67, "neutrons": 98},
+  "Er": {"atomic_number": 68, "protons": 68, "electrons": 68, "neutrons": 99},
+  "Tm": {"atomic_number": 69, "protons": 69, "electrons": 69, "neutrons": 100},
+  "Yb": {"atomic_number": 70, "protons": 70, "electrons": 70, "neutrons": 103},
+  "Lu": {"atomic_number": 71, "protons": 71, "electrons": 71, "neutrons": 104},
+  "Hf": {"atomic_number": 72, "protons": 72, "electrons": 72, "neutrons": 106},
+  "Ta": {"atomic_number": 73, "protons": 73, "electrons": 73, "neutrons": 108},
+  "W": {"atomic_number": 74, "protons": 74, "electrons": 74, "neutrons": 110},
+  "Re": {"atomic_number": 75, "protons": 75, "electrons": 75, "neutrons": 111},
+  "Os": {"atomic_number": 76, "protons": 76, "electrons": 76, "neutrons": 114},
+  "Ir": {"atomic_number": 77, "protons": 77, "electrons": 77, "neutrons": 115},
+  "Pt": {"atomic_number": 78, "protons": 78, "electrons": 78, "neutrons": 117},
+  "Au": {"atomic_number": 79, "protons": 79, "electrons": 79, "neutrons": 118},
+  "Hg": {"atomic_number": 80, "protons": 80, "electrons": 80, "neutrons": 121},
+  "Tl": {"atomic_number": 81, "protons": 81, "electrons": 81, "neutrons": 123},
+  "Pb": {"atomic_number": 82, "protons": 82, "electrons": 82, "neutrons": 125},
+  "Bi": {"atomic_number": 83, "protons": 83, "electrons": 83, "neutrons": 126},
+  "Po": {"atomic_number": 84, "protons": 84, "electrons": 84, "neutrons": 125},
+  "At": {"atomic_number": 85, "protons": 85, "electrons": 85, "neutrons": 125},
+  "Rn": {"atomic_number": 86, "protons": 86, "electrons": 86, "neutrons": 136},
+  "Fr": {"atomic_number": 87, "protons": 87, "electrons": 87, "neutrons": 136},
+  "Ra": {"atomic_number": 88, "protons": 88, "electrons": 88, "neutrons": 138},
+  "Ac": {"atomic_number": 89, "protons": 89, "electrons": 89, "neutrons": 138},
+  "Th": {"atomic_number": 90, "protons": 90, "electrons": 90, "neutrons": 142},
+  "Pa": {"atomic_number": 91, "protons": 91, "electrons": 91, "neutrons": 140},
+  "U": {"atomic_number": 92, "protons": 92, "electrons": 92, "neutrons": 146},
+  "Np": {"atomic_number": 93, "protons": 93, "electrons": 93, "neutrons": 144},
+  "Pu": {"atomic_number": 94, "protons": 94, "electrons": 94, "neutrons": 150},
+  "Am": {"atomic_number": 95, "protons": 95, "electrons": 95, "neutrons": 148},
+  "Cm": {"atomic_number": 96, "protons": 96, "electrons": 96, "neutrons": 151},
+  "Bk": {"atomic_number": 97, "protons": 97, "electrons": 97, "neutrons": 150},
+  "Cf": {"atomic_number": 98, "protons": 98, "electrons": 98, "neutrons": 153},
+  "Es": {"atomic_number": 99, "protons": 99, "electrons": 99, "neutrons": 153},
+  "Fm": {"atomic_number": 100, "protons": 100, "electrons": 100, "neutrons": 157},
+  "Md": {"atomic_number": 101, "protons": 101, "electrons": 101, "neutrons": 157},
+  "No": {"atomic_number": 102, "protons": 102, "electrons": 102, "neutrons": 157},
+  "Lr": {"atomic_number": 103, "protons": 103, "electrons": 103, "neutrons": 159},
+  "Rf": {"atomic_number": 104, "protons": 104, "electrons": 104, "neutrons": 157},
+  "Db": {"atomic_number": 105, "protons": 105, "electrons": 105, "neutrons": 157},
+  "Sg": {"atomic_number": 106, "protons": 106, "electrons": 106, "neutrons": 157},
+  "Bh": {"atomic_number": 107, "protons": 107, "electrons": 107, "neutrons": 155},
+  "Hs": {"atomic_number": 108, "protons": 108, "electrons": 108, "neutrons": 157},
+  "Mt": {"atomic_number": 109, "protons": 109, "electrons": 109, "neutrons": 157},
+  "Ds": {"atomic_number": 110, "protons": 110, "electrons": 110, "neutrons": 151},
+  "Rg": {"atomic_number": 111, "protons": 111, "electrons": 111, "neutrons": 161},
+  "Cn": {"atomic_number": 112, "protons": 112, "electrons": 112, "neutrons": 165},
+  "Nh": {"atomic_number": 113, "protons": 113, "electrons": 113, "neutrons": 173},
+  "Fl": {"atomic_number": 114, "protons": 114, "electrons": 114, "neutrons": 175},
+  "Mc": {"atomic_number": 115, "protons": 115, "electrons": 115, "neutrons": 173},
+  "Lv": {"atomic_number": 116, "protons": 116, "electrons": 116, "neutrons": 177},
+  "Ts": {"atomic_number": 117, "protons": 117, "electrons": 117, "neutrons": 177},
+  "Og": {"atomic_number": 118, "protons": 118, "electrons": 118, "neutrons": 176}
+};
+
+const orbit_percent_step = 10; // %
+const atom_size = 450; // px
+
+let atom = document.getElementById("atom");
+let electrons_amount = document
+
+atom.style.width = atom_size + "px";
+atom.style.width = atom_size + "px";
+
+// <orbits>
+let orbit_last_level = 0;
+
+function create_orbit() {
+    const start_size = 15; // %
+    let new_orbit = document.createElement("div");
+    new_orbit.className = "orbit";
+    atom.appendChild(new_orbit);
+
+    new_orbit.style.width  = (start_size + orbit_percent_step * orbit_last_level) / 100 * atom_size + "px";
+    new_orbit.style.height = (start_size + orbit_percent_step * orbit_last_level) / 100 * atom_size + "px";
+
+    orbit_last_level++;
+}
+// </orbits>

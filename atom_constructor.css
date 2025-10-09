@@ -1,0 +1,29 @@
+.atom_img {
+    display: flex;
+    position: relative;
+    background-color: #aaa;
+    width: 450px;
+    height: 450px;
+    border-radius: 30px;
+    box-shadow: 4px 4px 10px #555;
+    margin: 6px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.atom_img > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.orbit {
+    display: flex;
+    border-radius: 50%;
+    border: 2px solid #000;
+
+    justify-content: center;
+    align-items: center;
+}
