@@ -9,24 +9,18 @@
 <body>
     <div>
         <div class="atom_img" id="atom">
+            <div class="core"></div>
         </div>
-        <div id="proton">
-            Кол-во протонов:
-            <input type="button" value="-" id="proton_minus">
-            <input type="number" value="0" id="proton_amount">
-            <input type="button" value="+" id="proton_plus">
+        <div id="electron" class="controls">
+            <span id="text_span">Кол-во электронов:</span>
+            <input type="button" value="-" id="electron_minus" onclick="delete_electron()">
+            <span id="electron_amount">0</span>
+            <input type="button" value="+" id="electron_plus" onclick="add_electron()">
         </div>
-        <div id="electron">
-            Кол-во электронов:
-            <input type="button" value="-" id="electron_minus">
-            <input type="number" value="0" id="electron_amount">
-            <input type="button" value="+" id="electron_plus">
-        </div>
-        <div id="neutron">
-            Кол-во нейтронов:
-            <input type="button" value="-" id="neutron_minus">
-            <input type="number" value="0" id="neutron_amount">
-            <input type="button" value="+" id="neutron_plus">
+        <div class="element_img">
+            <div><p>Элемент:</p></div>
+            <div><span id="element_name"></span></div>
+
         </div>
     </div>
     <script src="js/atom_constructor.js"></script>
