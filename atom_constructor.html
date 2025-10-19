@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>конструктор атомов</title>
+    <link rel="stylesheet" href="atom_constructor.css">
+</head>
+<body>
+    <div>
+        <div class="atom_img" id="atom">
+            <div class="core"></div>
+        </div>
+        <div id="electron" class="controls">
+            <span id="text_span">Кол-во электронов:</span>
+            <input type="button" value="-" id="electron_minus" onclick="delete_electron()">
+            <span id="electron_amount">0</span>
+            <input type="button" value="+" id="electron_plus" onclick="add_electron()">
+        </div>
+        <div class="element_img">
+            <div><p>Элемент:</p></div>
+            <span id="element_name"></span>
+            <span id="element_name_ru">Водород</span>
+            <span id="element_mass">1.008</span>
+        </div>
+    </div>
+    <script src="js/atom_constructor.js"></script>
+</body>
+</html>
